@@ -1,9 +1,9 @@
-// import {i18n} from "./config/i18n";
+import {i18n} from "./config/i18n";
 import {styleResources} from "./config/style-resources";
-// import {primevue} from "./config/primevue";
-// import {image} from "./config/image";
+import {primevue} from "./config/primevue";
+import {image} from "./config/image";
 import {axios} from "./config/axios";
-// import {router} from "./config/router";
+import {router} from "./config/router";
 // import {auth} from "./config/auth";
 
 
@@ -59,20 +59,20 @@ export default {
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // Doc: https://www.primefaces.org/primevue/showcase-v2/#/setup
-    // ['@nuxtjs/i18n', i18n],
-    // ['primevue/nuxt', primevue],
+    ['@nuxtjs/i18n', i18n],
+    ['primevue/nuxt', primevue],
     ['@nuxtjs/style-resources', styleResources],
-    // ['@nuxt/image', image],
+    ['@nuxt/image', image],
     ['@nuxtjs/axios', axios],
     // ['@nuxtjs/auth-next', auth]
   ],
 
-  // router: {
+  router: {
   //   middleware: ['auth'],
-  //   extendRoutes(routes, resolve) {
-  //     return router
-  //   },
-  // },
+    extendRoutes(routes, resolve) {
+      return router
+    },
+  },
 
   loading: {
     color: 'lightblue',
